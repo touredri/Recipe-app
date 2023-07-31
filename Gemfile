@@ -25,7 +25,7 @@ gem "turbo-rails"
 # by reducing the number of queries it makes
 gem "bullet"
 
-# cancancan is an authorization library for Ruby
+# cancancan is an authorization library for Ruby [https://github.com/CanCanCommunity/cancancan]
 gem 'cancancan'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
