@@ -9,7 +9,6 @@ RSpec.describe 'recipe_foods/new', type: :view do
 
   it 'renders new recipe_food form' do
     render
-
     assert_select 'form[action=?][method=?]', recipe_foods_path, 'post' do
     end
   end
