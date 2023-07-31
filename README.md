@@ -132,6 +132,11 @@ Example command:
 - Twitter: [@kwakuamoafo](https://twitter.com/kwakuamoafo)
 - LinkedIn: [Lawrence Amoafo](https://linkedin.com/in/lawrence-amoafo-appoh)
 
+👤 **Drissa Toure**
+
+- GitHub: [@Kwaku28](https://github.com/touredri)
+- Twitter: [@kwakuamoafo](https://twitter.com/touredri)
+- LinkedIn: [Lawrence Amoafo](https://linkedin.com/in/touredri)
 <!-- FUTURE FEATURES -->
 
 # 🔭 Future Features <a name="future-features"></a>
