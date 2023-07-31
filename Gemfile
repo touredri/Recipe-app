@@ -21,6 +21,13 @@ gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
+# Bullet is a gem to help you increase your application's performance
+# by reducing the number of queries it makes
+gem "bullet"
+
+# cancancan is an authorization library for Ruby
+gem 'cancancan'
+
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
