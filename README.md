@@ -9,7 +9,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Foodbliss Blog ](#-about-project-)
+- [📖 Recipe app ](#-about-project-)
 - [🛠 Built With ](#-built-with-)
   - [Tech Stack ](#tech-stack-)
 - [🎲 Key Features ](#-key-features-)
@@ -96,7 +96,7 @@ Install this project with:
 Example command:
 
 ```sh
-  cd foodbliss_blog
+  cd Recipe-app
   gem install
 ```
 
