@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RecipesController < ApplicationController
   def index
     @recipes = Recipe.includes(:foods).all
@@ -29,7 +31,7 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = current_user.recipes.find(params[:id])
 
-    
+
     if @recipe.destroy
       respond_to do |format|
         format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
