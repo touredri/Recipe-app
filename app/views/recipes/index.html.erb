@@ -8,6 +8,7 @@
     <p>
       <%= link_to "Show this recipe", recipe %>
     </p>
+    <%= button_to "Remove", recipe, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
   <% end %>
 </div>
 

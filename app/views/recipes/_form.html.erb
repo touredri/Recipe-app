@@ -15,8 +15,20 @@
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
+  <div>
+    <%= form.label :preparation_time, style: "display: block" %>
+    <%= form.text_field :preparation_time %>
+  </div>
+  <div>
+    <%= form.label :cooking_time, style: "display: block" %>
+    <%= form.text_field :cooking_time %>
+  </div>
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description %>
+  </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit 'Create Recipe' %>
   </div>
 <% end %>
