@@ -52,10 +52,9 @@ td {
   align-items: center;
 }
 
-
 form,
 .public_recipe_container,
-.contain{
+.contain {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -93,7 +92,7 @@ form,
 }
 
 .show,
-.public_recipe{
+.public_recipe {
   display: flex;
   flex-direction: column;
   justify-content: center;
