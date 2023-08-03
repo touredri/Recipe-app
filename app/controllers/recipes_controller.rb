@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class RecipesController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @recipes = Recipe.all
   end
@@ -20,8 +22,9 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       if @recipe.save
-        format.html { redirect_to recipe_url(@recipe), notice: 'Recipe was successfully created.' }
+        format.html { redirect_to recipes_path(@recipe), notice: 'Recipe was successfully created.' }
         format.json { render :show, status: :created, location: @recipe }
+        # redirect_to recipes_path
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @recipe.errors, status: :unprocessable_entity }
@@ -30,8 +33,7 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    @recipe = current_user.recipes.find(params[:id])
-
+    @recipe = Recipe.find(params[:id])
 
     if @recipe.destroy
       respond_to do |format|
@@ -44,15 +46,13 @@ class RecipesController < ApplicationController
   end
 
   def public_recipes
-    @public_recipes = Recipe.includes(:user).where(public: true).order(created_at: :desc)
+    @public = Recipe.where(public: true).includes(:user).order(created_at: :desc)
   end
 
   def toggle_public
     @recipe = Recipe.find(params[:id])
-    # authorize! :toggle_public, @recipe
-
-    @recipe.toggle_public
-    redirect_to recipe_url(@recipe)
+    @recipe.update(public: !@recipe.public)
+    redirect_to recipe_path(@recipe)
   end
 
   private

@@ -3,13 +3,13 @@
     <h1>
       Public Recipes
     </h1>
-    <% @public_recipes.each do |recipe| %>
+    <% @public.each do |recipe| %>
       <div class="contain">
         <div class="recipe">
           <h2><%= recipe.name %></h2>
           <div>
             <p>Total food items : <%= recipe.foods.count %></p>
-            <p>Total price : $<%= recipe.foods.sum(:price) %></p>
+            <p>Total price : $<%= recipe.recipe_foods.sum{ |food| food.quantity * food.food.price } %></p>
           </div>
         </div>
         <p>By <%= recipe.user.name %></p>
