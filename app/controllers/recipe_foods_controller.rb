@@ -3,7 +3,7 @@
 class RecipeFoodsController < ApplicationController
   # GET /recipe_foods/new
   def new
-    @recipe_food = Recipe.find(params[:recipe_id])
+    @recipe = Recipe.find(params[:recipe_id])
     @foods = Food.all
     @recipe_food = @recipe.recipe_foods.new
   end
@@ -15,8 +15,9 @@ class RecipeFoodsController < ApplicationController
 
     respond_to do |format|
       if @recipe_food.save
-        format.html { redirect_to recipe_food_url(@recipe_food), notice: 'Ingredient was successfully added.' }
+        format.html { redirect_to recipe_path(@recipe), notice: 'Ingredient was successfully added.' }
         format.json { render :show, status: :created, location: @recipe_food }
+        # redirect_to recipe_path(@recipe_food)
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @recipe_food.errors, status: :unprocessable_entity }
@@ -43,6 +44,6 @@ class RecipeFoodsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def recipe_food_params
-    params.fetch(:recipe_food, {})
+    params.require(:recipe_food).permit(:recipe_id, :food_id, :quantity)
   end
 end
