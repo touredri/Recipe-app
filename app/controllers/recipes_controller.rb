@@ -2,11 +2,11 @@
 
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.includes(:foods).all
+    @recipes = Recipe.all
   end
 
   def show
-    @recipe = Recipe.includes(:foods).find(params[:id])
+    @recipe = Recipe.find(params[:id])
     @foods = @recipe.foods
   end
 
@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = current_user.recipes.new(recipe_params)
+    @recipe = Recipe.new(recipe_params)
 
     respond_to do |format|
       if @recipe.save
@@ -57,6 +57,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name)
+    params.require(:recipe).permit(:name, :description, :preparation_time, :cooking_time, :user_id)
   end
 end

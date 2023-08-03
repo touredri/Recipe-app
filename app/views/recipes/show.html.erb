@@ -3,32 +3,15 @@
 
   <%= render @recipe %>
 
-  <section>
-    <% if can? :toggle_public, @recipe %>
-      <% if @recipe.public %>
-        <%= link_to 'Make Private', toggle_public_recipe_path(@recipe), method: :patch %>
-      <% else %>
-        <%= link_to 'Make Public', toggle_public_recipe_path(@recipe), method: :patch %>
-      <% end %>
-    <% end %>
-  </section>
-
   <div>
-    <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |
     <%= link_to "Back to recipes", recipes_path %>
 
-    <%= button_to "Destroy this recipe", @recipe, method: :delete data: { turbo_confirm: "Are you sure?" } %>
+    <%= button_to "Destroy this recipe", @recipe, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
   </div>
   <section class="recipe_detail">
     <p> Preparation Time: <%= @recipe.preparation_time %> hour </p>
     <p> Cooking Time: <%= @recipe.cooking_time %> hour </p>
     <p> <%= @recipe.description %> </p>
-  </section>
-  <section class="actions_container">
-    <%= link_to 'Generate Shop List', users_shopping_list_path, class: 'action_link' %>
-    <% if @recipe.user == current_user %>
-      <%= link_to 'Add Ingredient', new_recipe_recipe_food_path(@recipe), class: 'action_link' %>
-    <% end %>
   </section>
   <table class="food-table">
     <thead>
