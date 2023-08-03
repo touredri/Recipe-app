@@ -1,0 +1,19 @@
+<div class="public_recipe">
+  <div class="public_recipe_container">
+    <h1>
+      Public Recipes
+    </h1>
+    <% @public_recipes.each do |recipe| %>
+      <div class="contain">
+        <div class="recipe">
+          <h2><%= recipe.name %></h2>
+          <div>
+            <p>Total food items : <%= recipe.foods.count %></p>
+            <p>Total price : $<%= recipe.foods.sum(:price) %></p>
+          </div>
+        </div>
+        <p>By <%= recipe.user.name %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
