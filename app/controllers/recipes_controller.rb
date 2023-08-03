@@ -44,7 +44,7 @@ class RecipesController < ApplicationController
   end
 
   def public_recipes
-    @recipes = Recipe.includes(user, recipe_foods: :food).where(public: true).order(created_at: :desc)
+    @public_recipes = Recipe.includes(:user).where(public: true).order(created_at: :desc)
   end
 
   def toggle_public
