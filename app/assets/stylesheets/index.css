@@ -73,17 +73,24 @@ form,
   height: 20px;
 }
 
-.confirm button {
+.confirm button,
+.action_link,
+.action button,
+.recipe_form input[type='submit'] {
   padding: 10px;
   background-color: #fa8b8b;
   border: 1px solid transparent;
   border-radius: 5px;
   margin: 20px 0;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
-.confirm button:hover {
+.confirm button:hover,
+.action_link:hover,
+.action button:hover,
+.recipe_form input[type='submit']:hover {
   background-color: #f82424;
-  cursor: pointer;
 }
 
 .confirm a {
