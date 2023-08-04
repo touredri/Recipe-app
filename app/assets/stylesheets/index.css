@@ -53,8 +53,7 @@ td {
 }
 
 form,
-.public_recipe_container,
-.contain {
+.public_recipe_container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -112,6 +111,14 @@ form,
 
 .recipe {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+}
+
+.contain {
+  width: 50%;
+  font-size: 25px;
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 8px;
 }
