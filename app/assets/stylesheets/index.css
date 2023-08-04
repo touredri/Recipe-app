@@ -76,7 +76,8 @@ form,
 .btn,
 .action_link,
 .action button,
-.recipe_form input[type='submit'] {
+.recipe_form input[type='submit'],
+.actions input[type='submit'] {
   padding: 10px;
   background-color: #fa8b8b;
   border: 1px solid transparent;
@@ -91,7 +92,8 @@ form,
 .action_link:hover,
 .btn:hover,
 .action button:hover,
-.recipe_form input[type='submit']:hover {
+.recipe_form input[type='submit']:hover,
+.actions input[type='submit']:hover {
   background-color: #f82424;
 }
 
