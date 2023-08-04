@@ -3,5 +3,18 @@
 require 'rails_helper'
 
 RSpec.describe Food, type: :model do
-  context ""
+  context "When creating a new food" do
+    it "is valid with valid attributes" do
+    user = create(:user)
+    food = build(:food, user: user)
+    expect(food).to be_valid
+    end
+
+    it "is not valid without a name" do
+      user = create(:user)
+      food = build(:food, user: user)
+      food.name = nil
+      expect(food).not_to be_valid
+    end
+  end
 end
