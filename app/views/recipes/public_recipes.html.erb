@@ -1,3 +1,5 @@
+<%= render 'shared/navigation' %>
+
 <div class="public_recipe">
   <div class="public_recipe_container">
     <h1>
@@ -12,7 +14,7 @@
             <p style="font-size: 22px">Total price : $<%= recipe.recipe_foods.sum{ |food| food.quantity * food.food.price } %></p>
           </div>
         </div>
-        <div style="display: flex; align-items: center; gap: 20px">
+        <div style="display: flex; align-items: center; gap: 15em">
           <h4>By <%= recipe.user.name %></h4>
           <div class="recipe_buttons">
             <a href="/recipes/<%= recipe.id %>" class="btn btn-primary">View</a>
