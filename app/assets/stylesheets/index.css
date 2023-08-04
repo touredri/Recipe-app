@@ -122,3 +122,9 @@ form,
   padding: 10px;
   margin-bottom: 8px;
 }
+
+.shop_list {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
