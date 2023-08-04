@@ -2,6 +2,16 @@
 
 class UsersController < ApplicationController
   def shopping_list
-    @all_recipes = Recipe.all
+    @shopping_list = []
+    all_foods = Food.all
+    foods_in_recipes = Food.joins(:recipes).distinct
+    all_foods.each do |food|
+      unless foods_in_recipes.include?(food)
+        @shopping_list << food
+      end
+    end
+    @total_item = @shopping_list.count
+    @total_price = @shopping_list.sum { |food| food.price * food.quantity }
   end
+
 end

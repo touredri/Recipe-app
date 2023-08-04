@@ -8,11 +8,16 @@
         <div class="recipe">
           <h2><%= recipe.name %></h2>
           <div>
-            <p>Total food items : <%= recipe.foods.count %></p>
-            <p>Total price : $<%= recipe.recipe_foods.sum{ |food| food.quantity * food.food.price } %></p>
+            <p style="font-size: 22px">Total food items : <%= recipe.foods.count %></p>
+            <p style="font-size: 22px">Total price : $<%= recipe.recipe_foods.sum{ |food| food.quantity * food.food.price } %></p>
           </div>
         </div>
-        <p>By <%= recipe.user.name %></p>
+        <div style="display: flex; align-items: center; gap: 20px">
+          <h4>By <%= recipe.user.name %></h4>
+          <div class="recipe_buttons">
+            <a href="/recipes/<%= recipe.id %>" class="btn btn-primary">View</a>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
