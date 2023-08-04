@@ -1,15 +1,28 @@
-<p style="color: green"><%= notice %></p>
+<%= render 'shared/navigation' %>
 
-<h1>Recipes</h1>
+<div class="recipe_page">
+  <h2>Recipes</h2>
 
-<div id="recipes">
-  <% @recipes.each do |recipe| %>
-    <%= render recipe %>
-    <p>
-      <%= link_to "Show this recipe", recipe %>
-    </p>
-    <%= button_to "Remove", recipe, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
-  <% end %>
+  <%= link_to "New recipe", new_recipe_path, class: 'new_recipe' %>
+
+  <section class="recipes">
+    <% @recipes.each do |recipe| %>
+    <div class="recipe_column">
+      <div>
+        <%= render recipe %>
+        <p>
+          <%= link_to "Show this recipe", recipe, class: 'link' %>
+        </p>
+      </div>
+      <div class="summary">
+        <p>
+          <%= recipe.description %>
+        </p>
+        <div class="confirm">
+          <%= button_to "Remove", recipe, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </section>
 </div>
-
-<%= link_to "New recipe", new_recipe_path %>
