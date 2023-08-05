@@ -2,6 +2,7 @@
 
 class UsersController < ApplicationController
   def shopping_list
+    @Foods = current_user.foods
     @recipes = current_user.recipes.includes(recipe_foods: :food)
     @all_recipe_foods = @recipes.map(&:recipe_foods).flatten
 
