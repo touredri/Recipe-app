@@ -15,8 +15,8 @@
     <% @recipe_foods.each do |recipe| %>
       <tr>
         <td><%= recipe[:food_name] %></td>
-        <td><%= (recipe[:total_quantity] - Food.find_by(name: recipe[:food_name]).quantity) %></td>
-        <td>$<%= (recipe[:total_quantity] * Food.find_by(name: recipe[:food_name]).price).to_i %></td>
+        <td><%= (recipe[:total_quantity] - @Foods.find_by(name: recipe[:food_name]).quantity) %></td>
+        <td>$<%= (recipe[:total_quantity] * @Foods.find_by(name: recipe[:food_name]).price).to_i %></td>
       </tr>
     <% end %>
   </table>
