@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class FoodsController < ApplicationController
-  before_action :set_food, only: %i[show edit update destroy]
+  load_and_authorize_resource
+  # before_action :set_food, only: %i[show ]
 
   # GET /foods or /foods.json
   def index
@@ -23,6 +24,7 @@ class FoodsController < ApplicationController
   def create
     @food = Food.new(food_params)
     @food.user = current_user
+    # authorize! :create, @food
 
     respond_to do |format|
       if @food.save

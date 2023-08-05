@@ -21,7 +21,9 @@
     </thead>
     <tbody>
       <% @foods.each do |food| %>
-        <%= render food %>
+        <% if current_user.foods.include?(food) %>
+          <%= render food %>
+        <% end %>
       <% end %>
     </tbody>
   </table>
