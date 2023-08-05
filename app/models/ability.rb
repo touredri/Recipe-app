@@ -9,7 +9,7 @@ class Ability
 
     # can read all public recipes
     can :read, Recipe, public: true
-    can :create , Food if user.persisted?
+    can :create, Food if user.persisted?
 
     # if user is logged in, can manage their own recipes
     return unless user.id
