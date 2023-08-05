@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @all_recipe_foods = @recipes.map(&:recipe_foods).flatten
 
     @recipe_foods = []
-    food_quantities = Hash.new(0)  # Hash to store cumulative quantities by food name
+    food_quantities = Hash.new(0)
 
     @all_recipe_foods.each do |recipe|
       if recipe.quantity > recipe.food.quantity
