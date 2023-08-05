@@ -21,10 +21,8 @@
     </thead>
     <tbody>
       <% @foods.each do |food| %>
-        <% if can?(:manage, food) %>
           <%= render food %>
         <% end %>
-      <% end %>
     </tbody>
   </table>
   </div>
