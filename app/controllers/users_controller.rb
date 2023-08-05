@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def shopping_list
     @recipes = current_user.recipes.includes(recipe_foods: :food)
@@ -14,7 +16,7 @@ class UsersController < ApplicationController
     end
 
     food_quantities.each do |food_name, total_quantity|
-      @recipe_foods << { food_name: food_name, total_quantity: total_quantity }
+      @recipe_foods << { food_name:, total_quantity: }
     end
   end
 end
