@@ -4,8 +4,8 @@
 <section class="recipe_page">
   <h2>Shopping List</h2>
   <div class="shop_list">
-    <h3> Amount of food item to buy: <%= @quantity.size %></h3>
-    <h3> Total price: $<%= @total %></h3>
+    <h3> Amount of food item to buy: <%=  @total_foods %></h3>
+    <h3> Total price: $<%= @total_price %></h3>
   </div>
   <table>
     <tr>
@@ -13,11 +13,11 @@
       <th>Quantity</th>
       <th>Price</th>
     </tr>
-    <% @final_list.each do |food| %>
+    <% @food_items_to_buy.each do |item| %>
       <tr>
-        <td><%= food.name %></td>
-        <td><%= food.quantity %> <%= food.measurement_unit%></td>
-        <td>$<%= food.price * food.quantity %></td>
+        <td><%= item.name %></td>
+        <td><%= "#{item.quantity} #{item.measurement_unit}" %> </td>
+        <td>$ <%= item.price %></td>
       </tr>
     <% end %>
   </table>
