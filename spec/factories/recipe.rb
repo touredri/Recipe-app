@@ -2,8 +2,8 @@
 
 FactoryBot.define do
   factory :recipe do
-    name { "pawpaw" }
-    description { "delicious pawpaw" }
+    name { 'pawpaw' }
+    description { 'delicious pawpaw' }
     public { true }
     association :user
     preparation_time { 1 }

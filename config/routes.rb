@@ -2,8 +2,8 @@
 
 Rails.application.routes.draw do
   devise_for :users
-  
-  resources :recipes, only: [:index, :show, :new, :create, :destroy] do
+
+  resources :recipes, only: %i[index show new create destroy] do
     member do
       patch :toggle_public
     end

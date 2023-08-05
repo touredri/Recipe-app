@@ -5,8 +5,8 @@ require 'rails_helper'
 RSpec.describe 'foods/index', type: :view do
   before do
     user = create(:user)
-    food1 = create(:food, name: 'Carrot', measurement_unit: 'piece', price: 2, user: user)
-    food2 = create(:food, name: 'Apple', measurement_unit: 'piece', price: 3, user: user)
+    food1 = create(:food, name: 'Carrot', measurement_unit: 'piece', price: 2, user:)
+    food2 = create(:food, name: 'Apple', measurement_unit: 'piece', price: 3, user:)
     assign(:foods, [food1, food2])
   end
 

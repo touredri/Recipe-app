@@ -7,10 +7,10 @@ RSpec.describe 'recipes/show', type: :view do
     user = create(:user)
     assign(:recipe, Recipe.create!(
                       name: 'Name',
-                      user: user,
+                      user:,
                       description: 'MyText',
                       preparation_time: '1.3',
-                      cooking_time: '2.3',
+                      cooking_time: '2.3'
                     ))
   end
 
