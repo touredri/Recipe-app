@@ -1,0 +1,23 @@
+<%= render 'shared/navigation' %>
+
+<section class="recipe_page">
+  <h2>Shopping List</h2>
+  <div class="shop_list">
+    <h3>Amount of food item to buy: <%= @recipe_foods.length %></h3>
+    <h3>Total price: $<%= @recipe_foods.map { |r| r[:total_quantity] * @foods.find_by(name: r[:food_name]).price }.sum.to_i %></h3>
+  </div>
+  <table>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+    <% @recipe_foods.each do |recipe| %>
+      <tr>
+        <td><%= recipe[:food_name] %></td>
+        <td><%= recipe[:total_quantity] %></td>
+        <td>$<%= (recipe[:total_quantity] * @foods.find_by(name: recipe[:food_name]).price).to_i %></td>
+      </tr>
+    <% end %>
+  </table>
+</section>

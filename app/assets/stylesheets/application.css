@@ -1,0 +1,197 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.notice {
+  color: #00c500;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-around;
+}
+
+.navigation h1 {
+  font-size: 2.5rem;
+  color: #000;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.link,
+.new_recipe {
+  font-size: 1.5rem;
+  color: #fa8b8b;
+  cursor: pointer;
+}
+
+.new_recipe {
+  align-self: end;
+}
+
+.link:hover,
+.new_recipe:hover {
+  color: #fa1212;
+}
+
+.recipe_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  width: 80%;
+  padding-bottom: 50px;
+}
+
+.recipe_page h2 {
+  font-size: 2rem;
+  color: #000;
+}
+
+.recipes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  gap: 1em;
+  margin-top: 20px;
+}
+
+.recipe_column {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #000;
+  padding: 0 50px;
+}
+
+.recipe_column p {
+  font-size: 1.5rem;
+  color: #000;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.toggle {
+  align-self: end;
+}
+
+.name p {
+  position: absolute;
+  left: 9rem;
+  font-size: 2rem;
+  color: #000;
+  margin: auto;
+}
+
+.recipe_detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.recipe_detail p {
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.actions_container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.action_link {
+  color: #000;
+  font-size: 1.2rem;
+}
+
+.action {
+  display: flex;
+  justify-content: space-around;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.public,
+.private {
+  padding: 5px;
+  border-radius: 5px;
+  color: #000;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.public {
+  background-color: #fa8b8b;
+}
+
+.private {
+  background-color: #00c500;
+}
+
+.recipe_form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  gap: 10px;
+  font-size: 1.5rem;
+}
+
+.recipe_form input[type='text'],
+select,
+textarea {
+  width: 100%;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.join_in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.join_in form {
+  gap: 1rem;
+}
+
+.field input {
+  width: 100%;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.field input[type='checkbox'] {
+  width: 10%;
+}

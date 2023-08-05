@@ -1,0 +1,13 @@
+<%= render 'shared/navigation' %>
+
+<section class="recipe_page">
+  <h2>New recipe</h2>
+
+  <%= render "form", recipe: @recipe %>
+
+  <br>
+
+  <div>
+    <%= link_to "< Back", recipes_path, class: 'link' %>
+  </div>
+</section>

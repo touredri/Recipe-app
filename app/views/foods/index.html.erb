@@ -1,0 +1,29 @@
+<%= render 'shared/navigation' %>
+
+<p style="color: green"><%= notice %></p>
+
+<div class="top">
+  <h1>Foods</h1>
+  <p>
+    <%= link_to "Add New food", new_food_path %>
+  </p>
+</div>
+<div class="food_container">
+  <div class="foods">
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Measurement unit</th>
+        <th>Unit price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
+          <%= render food %>
+        <% end %>
+    </tbody>
+  </table>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<%= render 'shared/navigation' %>
+
+<main class="recipe_page">
+
+  <div class="name">
+    <%= render @recipe %>
+  </div>
+
+  <section class="toggle">
+    <% if can? :toggle_public, @recipe %>
+      <% if @recipe.public %>
+        <%= button_to 'Make Private', toggle_public_recipe_path(@recipe), method: :patch, class: 'private' %>
+      <% else %>
+        <%= button_to 'Make Public', toggle_public_recipe_path(@recipe), method: :patch, class: 'public' %>
+      <% end %>
+    <% end %>
+  </section>
+
+  <section class="recipe_detail">
+    <p><b> Preparation Time: </b><%= @recipe.preparation_time %> hour </p>
+    <p><b> Cooking Time: </b><%= @recipe.cooking_time %> hour </p>
+    <p><b> Procedure: </b><br/> <%= @recipe.description %> </p>
+  </section>
+
+  <section class="actions_container">
+    <%= link_to 'Generate Shop List', general_shopping_list_path, class: 'action_link' %>
+    <% if @recipe.user == current_user %>
+      <%= link_to 'Add Ingredient', new_recipe_recipe_food_path(@recipe), class: 'action_link' %>
+    <% end %>
+  </section>
+
+  <table class="food-table">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+       <% if can?(:manage, @recipe) %> <th>Actions</th> <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipe.recipe_foods.includes(:food).each do |recipe_food| %>
+        <% food = recipe_food.food %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= recipe_food.quantity %></td>
+          <td>$<%= food.price * recipe_food.quantity %></td>
+          <% if can?(:manage, @recipe)  %>
+          <td class="action">
+            <%= button_to 'Modify', '#' %>
+            <%= button_to 'Delete', recipe_recipe_food_path(@recipe.id, recipe_food.id), method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+          </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</main>
