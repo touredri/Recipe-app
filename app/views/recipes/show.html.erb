@@ -35,7 +35,7 @@
         <th>Food</th>
         <th>Quantity</th>
         <th>Value</th>
-        <th>Actions</th>
+       <% if can?(:manage, @recipe) %> <th>Actions</th> <% end %>
       </tr>
     </thead>
     <tbody>
@@ -45,10 +45,12 @@
           <td><%= food.name %></td>
           <td><%= recipe_food.quantity %></td>
           <td>$<%= food.price * recipe_food.quantity %></td>
+          <% if can?(:manage, @recipe)  %>
           <td class="action">
             <%= button_to 'Modify', '#' %>
             <%= button_to 'Delete', recipe_recipe_food_path(@recipe.id, recipe_food.id), method: :delete, data: { turbo_confirm: "Are you sure?" } %>
           </td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
