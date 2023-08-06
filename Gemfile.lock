@@ -70,8 +70,6 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     bcrypt (3.1.19)
     bindex (0.8.1)
-    bootsnap (1.16.0)
-      msgpack (~> 1.2)
     builder (3.2.4)
     bullet (7.0.7)
       activesupport (>= 3.0.0)
@@ -133,7 +131,6 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.19.0)
-    msgpack (1.7.2)
     net-imap (0.3.7)
       date
       net-protocol
@@ -264,7 +261,6 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  bootsnap
   bullet
   cancancan
   capybara
